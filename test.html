@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <!-- 반응형 태그 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>test</title>
+	<link rel="stylesheet" media="all" href="./css/common.css" />
+    <style>
+        div {background-color:gray;}
+        div.on {background-color:red;}
+
+        .click_menu
+        {
+            width:150px;
+        }
+        .click_menu > .btn
+        {
+            border:2px solid red;
+            display:block;
+        }
+        .click_menu > .list {border:1px solid orange;}
+        
+        .list_item{border:1px solid red;}
+
+        .service.on{
+
+            background-color:lime;
+        }
+        *{margin:0; padding:0;}
+        /* #photo_list {border:2px solid lime; padding:20px; overflow:hidden;}
+        #photo_list > li {float:left; border:2px solid orange; padding:20px; list-style:none;}
+        #photo_list > li > a {border:2px solid black; padding:10px; }
+        .list_item {border:1px solid red;}   */
+        li {width:150px;height:100px;float:left;}
+        li > a {position:relative; width:150px; height:100px; display:block; }
+        li > a::after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;transition:all 0.8s ease;border:0px solid lime;}
+        li img{width:100%;height:100%;}
+        li > a.on::after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;border:10px solid lime;}
+    </style>
+
+</head>
+<body>
+    <a href="#" class="wrtie_menu">메뉴만들기</a>
+    <a href="#" class="order_menu">주문하기</a>
+
+    <div>adads</div>
+    <div>adads</div>
+    <div>adads</div>
+    <div>adads</div>
+    <div>adads</div>
+    <div>adads</div>
+    <div>adads</div>
+    <div>adads</div>
+    <div>adads</div>
+    <div>adads</div>
+
+    <div class="click_menu">
+        <a href="#" class="btn">버튼</a>
+        <ul class="list">
+            <li>메뉴1</li>
+            <li>메뉴2</li>
+            <li>메뉴3</li>
+            <li>메뉴4</li>
+            <li>메뉴5</li>
+            <li>메뉴6</li>
+        </ul>
+    </div>
+
+
+    <div class="service">
+        <h2>차량 서비스</h2>
+        <ul title="list_service">
+            <li>세차</li>
+            <li>주유</li>
+            <li>소모품교체</li>
+            <li><a href="http://eulsoo.com">을수</a></li>
+            <li><a href="http://naver.com">네이버</a></li>
+            <li><a href="http://daum.net">다음</a></li>
+            <li><a href="http://kakao.com">카카오</a></li>
+            <li><a href="http://google.com">구글</a></li>
+        </ul>
+    </div>
+    <input/>
+    <a href="" class="btn_test">안녕</a>
+
+    <!-- <ul id="photo_list">
+        <li><a href="#">건물</a></li>
+        <li><a href="#">커피</a></li>
+        <li><a href="#">불꽃놀이</a></li>
+        <li><a href="#">장미</a></li>
+    </ul> -->
+
+    <div id="service1">
+        <h2><a href="#" >차량 서비스</a></h2>
+        <ul title="인기서비스" class="popular">
+            <li>세차</li>
+            <li>주유</li>
+            <li>소모품교체</li>
+        </ul>
+    </div>  
+    
+    <!-- 이미지 뷰어 이벤트 처리부분 -->
+    <h1>나의 사진첩</h1> 
+    <ul id="photo_list" style="overflow:hidden;"> 
+        <li><a href="images/bigben.jpg" title="멋진 건물"><img src="images/bigben.jpg" ></a></li> 
+        <li><a href="images/coffee.jpg" title="향기로운 커피" ><img src="images/coffee.jpg"></a></li>
+        <li><a href="images/fireworks.jpg" title="화려한 불꽃놀이"><img src="images/fireworks.jpg"></a> </li> 
+        <li><a href="images/rose.jpg" title="아름다운 장미"><img src="images/rose.jpg"></a></li> 
+    </ul>
+
+    <!-- <img id="placeholder" src="http://placehold.it/300x200"/>
+    <p id="desc">사진 설명입니다.</p> -->
+
+    <script src="./test.js"></script>
+    <script>
+        
+            // function driver(){
+            //     this.wheelNum = null;
+            //     this.windowNum = null;
+            //     this.axel = null;
+            //     this.go = function(){console.log("go");}
+            // }
+    
+            // var car = new driver();
+            // console.log(car);
+            // car.go();
+            // driver.prototype.back = function(){console.log("back");}
+            // car.back();
+    
+            // var arr1 = ["독서", "영화감상", "운동", "만들기"];
+            // // arr = new Array("위의 value");
+           
+            // var ulElement = document.querySelector(".list");
+    
+            // arr1.forEach(function(item, index, c){
+            //     var liElement = document.createElement("li");
+            //     var textElement = document.createTextNode(index + item + "ee");
+            //     liElement.appendChild(textElement);
+            //     ulElement.appendChild(liElement);
+            // });
+            
+            
+
+            // function person(){
+            //     this.height = "170cm";
+
+            // }
+            // function murder()
+            // {
+            //     person.call(this);
+            //     this.kill = "1";
+            // }
+
+            // person.prototype.exercise = function(){console.log("hit");}
+            // var jason = new murder();
+
+            // murder.prototype = person.prototype;
+
+            // console.log("person constructor " + person.prototype.constructor);
+            // console.log("murder constructor " + murder.prototype.constructor);
+
+            // var a = document.querySelector("html");
+            // window.addEventListener("click", 할일);
+            
+            // function 할일()
+            // {
+            //     console.log(a.scrollTop);
+            // }
+
+            // var el = document.getElementById("service");
+            
+            // var arrLi = el.getElementsByTagName("li");
+
+            // for(var i = 0; i < el.getElementsByTagName("li").length; i++)
+            // {
+            //     el.getElementsByTagName("li")[i].style.border = "2px solid blue";
+            //     console.log(el.getElementsByTagName("li")[i]);
+
+            //     arrLi[i].setAttribute("title", "listService");
+            // }
+            // console.log(arrLi);
+            
+            // var titleList = document.getElementsByClassName("service");
+            // var aList = titleList[0].getElementsByTagName("a");
+            // var emptyArr = [];
+
+
+            // for(var j = 0; j < aList.length ; j++)
+            // {
+            //     emptyArr.push(aList[j].getAttribute("href"));
+            // }
+            // console.log(emptyArr);
+
+            // console.log(el);
+
+
+            // var getClassName = document.getElementsByClassName("service");
+            // var liList = getClassName[0].getElementsByTagName("li");
+
+            // for(var i = 0; i < liList.length; i++)
+            // {
+            //     liList[i].className = "list_item";
+            //     console.log(liList[i]);
+            // }
+
+            // var getId = document.getElementsByClassName("service");
+            // var aList = getId[0].getElementsByTagName("a");
+
+            // var userGeneralObject = {
+            //     구글 : "http:google.com",
+            //     네이버 : "http://naver.com",
+            //     다음 : "http://daum.net"
+            // };
+
+            // var i = 0;
+
+            // for (var temp in userGeneralObject)
+            // {
+            //     aList[i].text = temp; 
+            //     aList[i].href = userGeneralObject[temp]; // setAttribute("href", userGeneralObject[temp])
+            //     i++;
+            //     // console.log(aList[i].text);
+            //     // console.log(userGeneralObject[temp]);
+            // }
+            // i = null;
+            
+
+            // var getId = document.querySelector(".service"); //getElementsByClassName
+            // var aList = getId.querySelectorAll("a"); //getElementsByTagName
+            
+            // var h2 = getId.querySelector("h2");
+
+            // getId.addEventListener("click", toggle)
+
+            // function toggle()
+            // {
+            //     if(getId.classList.contains("on"))
+            //     {
+            //         getId.classList.remove("on");
+            //     }
+            //     else
+            //     {
+            //         getId.classList.add("on");
+            //     }
+            // }
+
+            // console.log(aList[3].childNodes[0]);
+            // console.log(getId.firstChild);
+            // console.log(aList[0].parentNode.parentNode);
+            // console.log(h2.nextSibling.nextSibling);
+
+            // console.log(h2.nextSibling.nextSibling.childNodes[1].nodeType);
+            // console.log(h2.nodeName);
+            // console.log(h2.nodeValue);
+            // document.write('<p><a href=""> dasda </p>');
+
+            // getId.innerHTML = "<p>adsadfdsf</p>";
+
+            // var newEle = document.createElement("div");
+            // var text = document.createTextNode("das");
+            // newEle.appendChild(text);
+            // getId.appendChild(newEle);
+            // newEle.className = "eulsoo";
+
+            // var input = document.querySelector("input");
+            // input.addEventListener("click", function(event){
+            //     console.log(event.type);
+            // });
+
+
+            // var btnTest = document.querySelector(".btn_test");
+            // btnTest.addEventListener("click", function(event){
+            //     event.preventDefault();
+            //     console.log(event.target);
+            //     if(event.target.tagName === "A")
+            //     {
+            //         console.log("return A");
+            //     }
+            //     btnTest.style.border = "2px solid red";
+            // })
+
+            // var photoList = document.querySelector("#photo_list");
+            // var aEls = photoList.querySelectorAll("a");
+
+            // photoList.addEventListener("click", tempfunction, true);
+            
+            // function tempfunction(event)
+            // {
+            //     console.log(event.target);
+            //     console.log(event.target.tagName);
+            //     console.log(event.eventPhase);
+            //     if(event.target.style.backgroundColor === "red")event.target.style.backgroundColor = "";
+            //     else{event.target.style.backgroundColor = "red"}
+            // }
+
+            // var bodyEls = document.querySelector("body");
+            // var ulEls = document.querySelector("#photo_list");
+
+            // window.addEventListener("click", windowDoing, true);
+            // bodyEls.addEventListener("click", bodyDoing, true);
+            // ulEls.addEventListener("click", ulDoing, true);
+
+            // function windowDoing()
+            // {
+            //     console.log("window객체에 도착!");
+            //     event.stopPropagation();
+            // }
+            
+            // function bodyDoing(event)
+            // {
+            //     console.log("body요소 객체에 도착");
+            //     event.preventDefault();
+                
+            // }
+
+            // function ulDoing(event)
+            // {
+            //     console.log("ul요소 객체에 도착");
+            //     ulEls.removeEventListener("click", ulDoing, true);
+                
+            // }
+
+            // var aEls = document.querySelector("ul");
+            // var selecth2 = document.querySelector("h2");
+            // var btnh2 = selecth2.querySelector("a");
+            
+            //  var ul = document.querySelector(".popular");
+            //  var li = ul.querySelectorAll("li");
+
+            // var ads = document.querySelector("#service1");
+                
+            // ads.addEventListener("click", allproc);
+            // function allproc(event)
+            // {
+            //     if(event.target.tagName === "A")
+            //     {
+            //         for(var i =0; i < li.length; i++)
+            //         {
+            //             li[i].style.border = "2px solid red";
+            //         }
+            //     }
+            //     else
+            //     {
+            //         for(var i = 0; i < li.length; i++)
+            //         {
+            //             li[i].style.backgroundColor = "lime";
+            //         }
+            //     }
+
+            // }
+            // var toggles = -1;
+
+            // function paintColor()
+            // {
+            //     if(toggles == -1)
+            //     {
+            //         for(var i=0;i<li.length;i++)
+            //         {
+            //             li[i].className = "list_item";
+            //         }
+            //     }
+            //     else{
+            //         for(var i=0;i<li.length;i++)
+            //         {
+            //             li[i].className = "";
+            //         }
+            //     }
+                
+            //     toggles *= -1;
+            // }
+            // function temp()
+            // {
+            //     for(var i=0;i<li.length;i++)
+            //         {
+            //             ul.childNodes[i].style.backgroundColor = "green";
+            //         }
+                
+            // }
+           
+            // ul.addEventListener("click",temp);
+            
+            // btnh2.addEventListener("click",paintColor);
+
+
+            //여기 아래서부터 이미지뷰어는 중요 
+            // var photoList = document.querySelector("#photo_list");
+            // var liEls = photoList.querySelectorAll("li");
+
+
+            // var createPh = document.createElement("img");
+            // createPh.id = "placeholder";
+            // createPh.setAttribute("src", "http://placehold.it/300x200");
+            
+
+            // var paragraph = document.createElement("p");
+            // paragraph.id = "desc";
+            // paragraph.appendChild(document.createTextNode("사진 설명입니다."));
+
+            // document.body.appendChild(createPh);   
+            // document.body.appendChild(paragraph); 
+            
+
+            // var createDesc = document.createElement("p");
+
+
+            // var placeholder = document.querySelector("#placeholder");
+            // var desc = document.querySelector("#desc");
+
+            // photoList.addEventListener("click",imageViewer); // 클릭도 가능
+
+            // function imageViewer(event)
+            // {
+            //     event.preventDefault();
+            //     console.log(event.target.tagName);
+            //     if(event.target.tagName === "A")
+            //     {
+            //         if(event.target.className !== "on")
+            //         {
+            //             for(var i=0;i<liEls.length;i++)
+            //             {
+            //                 liEls[i].childNodes[0].className = "";
+            //             }
+            //             event.target.className = "on";
+            //             var changeAttr = event.target.getAttribute("href");
+            //             placeholder.setAttribute("src", changeAttr);
+            //             desc.innerHTML = event.target.getAttribute("title");
+            //         }
+            //         else
+            //         {
+            //             event.target.className = ""; 
+            //         }
+            //     }
+                
+            // }
+            
+
+
+            
+        </script>
+</body>
+</html>
