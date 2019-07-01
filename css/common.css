@@ -34,42 +34,49 @@ a{
     text-decoration-line : none;
 }
 /* common */
-
-
+.wrap > header > nav > .menuRoot > ul > li > a:hover {color:#1428a0;background-color:#f7f7f7;}
+.wrap > .shadowBox {visibility:hidden;position:fixed;left:0;right:0;bottom:0;top:0;background-color:rgba(0,0,0,0.8);z-index:4;}
+.on {visibility:visible;}
 /* layout */
 .wrap {width:100%;}
-header {margin:0 auto;	width:100%;height:64px;display:block;max-width:1440px;}
+header {margin:0 auto;width:100%;height:64px;display:block;max-width:1440px;}
 .content {width:100%;position: relative; display:block;}
 .galaxy{width:96%;margin-top:4%;display:block; margin:0 auto;}
 .footer{width:100%;margin:0 auto;position:relative;}
 
 
 /* header */
-.wrap > header > nav{width:100%;margin:0 auto;top:0;left:0;right:0;position:absolute;border-bottom:1px solid lightgray;padding: 17px 3% 0px 3%; height:64px; box-sizing: border-box;}
+.wrap > header > nav{width:100%;margin:0 auto;top:0;left:0;right:0;position:absolute;border-bottom:1px solid lightgray;padding: 17px 12% 0px 12%; height:64px; box-sizing: border-box;}
 .wrap > header > nav::after{content:'';clear:both;display:block;}
 .wrap > header > nav > h1 {text-align:center; font-weight: bolder; font-size:24px;}
 .wrap > header > nav > h1 > a {color:#0c4da2;}
-.wrap > header > nav > .userMenu{margin-top:-24px;float:right;}
-.wrap > header > nav > .storeMenu{margin-top:-24px;float:left;}
-.wrap > header > nav > ul > li {float:left; font-weight:bold;padding-bottom:50px;}
-.wrap > header > nav > ul > li+li {margin-left:14px;}
-.wrap > header > nav > ul > li > .depthContainer {display: none;padding-left:2%;width:100%; height:500%;position:absolute; top:100%; left:0; border-top:1px solid lightgray;border-bottom:1px solid lightgray; margin:0 auto; z-index:100; background-color:white;}
-.wrap > header > nav > ul > li.on > .depthContainer{display: block;}
-.wrap > header > nav > ul > li > .depthContainer .depth2{float:left; }
-.wrap > header > nav > ul > li > .depthContainer .right{float:right;}
-.wrap > header > nav > ul > li > .depthContainer .online{padding-left:2%;position:absolute;left:0;top:50%;}
-.wrap > header > nav > ul > li > .depthContainer .depth2 > h3 {margin:10px 0;}
-.wrap > header > nav > ul > li > .depthContainer .depth2 > ul {float:left;}
-.wrap > header > nav > ul > li > .depthContainer .depth2 > ul li {width:150px;}
+.wrap > header > nav > .menuRoot {padding:0% 0% 0% 2%;background-color:RGBA(0,0,0,0); position:absolute;left:0;width:98%;}
+.wrap > header > nav > .menuRoot > .userMenu{margin-right:4%;margin-top:-24px;float:right;}
+.wrap > header > nav > .menuRoot > .storeMenu{margin-top:-24px;float:left;}
+.wrap > header > nav > .btnMobile {display:none;}
+
+.wrap > header > nav > .menuRoot ul > li {float:left; font-weight:bold;padding-bottom:50px;}
+.wrap > header > nav > .menuRoot ul > li+li {margin-left:14px;}
+
+/* 뎁스별 메뉴 */
+.wrap > header > nav > .depthContainer {display: none;padding-left:2%;width:100%; height:500%;position:absolute; top:100%; left:0; border-top:1px solid lightgray;border-bottom:1px solid lightgray; margin:0 auto; z-index:100; background-color:white;}
+.wrap > header > nav > .depthContainer.on {display:block;}
+.wrap > header > nav > .depthContainer .depth2{float:left; }
+.wrap > header > nav > .depthContainer .right{float:right;}
+.wrap > header > nav > .depthContainer .online{padding-left:2%;position:absolute;left:0;top:50%;}
+.wrap > header > nav > .depthContainer .depth2 > h3 {margin:10px 0;}
+.wrap > header > nav > .depthContainer .depth2 > ul {float:left;}
+.wrap > header > nav > .depthContainer .depth2 > ul li {width:150px;}
 
 /* mainvisual */
 .mainvisual{width:100%;height:556px; margin-bottom:3%;}
-.mainvisual > .slide {top:0; left:0; right:0;width:96%;height:100%; max-height:550px; margin:0 auto;}
-.mainvisual > .slide > .imgBox{width:90%; height:100%; overflow:hidden; position:relative; margin:0 auto;}
+.mainvisual > .slide {top:0; left:0; right:0;width:100%;height:100%; max-height:550px; margin:0 auto;}
+.mainvisual > .slide > .imgBox{width:100%; height:100%; overflow:hidden; position:relative; margin:0 auto;}
 
-.mainvisual > .slide > .imgBox > .FSLbtn {position:absolute;top:50%;left:0; z-index:1;}
+/* 슬라이더별 버튼 */
+.mainvisual > .slide > .imgBox > .FSLbtn {position:absolute;top:50%;left:9%; z-index:1;}
 .mainvisual > .slide > .imgBox > .FSLbtn::before{border:10px solid black;content:'';display:block;border-left-color:transparent;border-top-color:transparent;border-bottom-color:transparent;}
-.mainvisual > .slide > .imgBox > .FSRbtn {position:absolute;top:50%;right:0%; z-index:1;}
+.mainvisual > .slide > .imgBox > .FSRbtn {position:absolute;top:50%;right:9%; z-index:1;}
 .mainvisual > .slide > .imgBox > .FSRbtn::before{border:10px solid black;content:'';display:block;border-right-color:transparent;border-top-color:transparent;border-bottom-color:transparent;}
 
 .mainvisual > .slide > .imgBox > li {transition:opacity 1s linear;max-width:1440px;width:100%;height:100%;max-height:555px;position:absolute; left:0; right:0; margin:0 auto;opacity:0;}
@@ -187,3 +194,57 @@ header {margin:0 auto;	width:100%;height:64px;display:block;max-width:1440px;}
 .footer > .address > ul > li{float:left; padding-left:25px;}
 .footer > .address > ul > li > a {color:white;}
 .footer > .address > ul > .private > a {color:skyblue;}
+
+
+/* 1025까지 nav탭 일자형 */
+/* @media screen and (max-width:1025px)
+{
+	.wrap > header > nav > .depthContainer.on {position:absolute;display: block;width:280px; height:500px;left:295px; border-top:1px solid lightgray;border-bottom:1px solid lightgray; margin:0 auto; z-index:5; background-color:white;overflow:scroll;}
+	.wrap > header > nav > .depthContainer > .depth2 {float:none;}
+	.wrap > header > nav > .depthContainer > .depth2.right {float:none;display:none;}
+	.wrap > header > nav > .depthContainer > .depth2.online {padding:0;position:unset;padding:0;top:0;}
+} */
+
+/* 모바일 큰 화면 */
+@media screen and (min-width:770px) and (max-width:1279px)
+{
+	/* header */
+	.wrap > header > nav {padding: 17px 5% 0px 5%;z-index:4;background-color:white;}
+	.wrap > header > nav > .btnMobile {position:absolute;top:40%;display:block;}
+	.wrap > header > nav > .menuRoot{visibility:hidden;border-top:1px solid lightgray;width:280px;height:817px;overflow:scroll;top:100%;background-color:white;}
+	.wrap > header > nav > .menuRoot > ul > li {float:none; padding:0;margin:0;margin-top:-17px;width:285px;}
+	.wrap > header > nav > .menuRoot > ul > li+li {padding:0;margin:0;}
+	.wrap > header > nav > .menuRoot > ul > li > a {padding:8% 60% 8% 11%;margin:0 auto;background-color:white;font-size:120%;display:block;}
+	.wrap > header > nav > .menuRoot > .storeMenu {position:absolute;left:0;margin-top:16px;z-index:5;}
+	.wrap > header > nav > .menuRoot > .userMenu {position:absolute;left:0;top:58%;margin-top:0px;z-index:5;}
+	
+	.wrap > header > nav > .depthContainer{padding:0;}
+	.wrap > header > nav > .depthContainer.on {position:absolute;display: block;width:280px; height:817px;left:300px; border-top:1px solid lightgray;border-bottom:1px solid lightgray; margin:0 auto; z-index:5; background-color:white;overflow:scroll;}
+	.wrap > header > nav > .depthContainer > .depth2 {margin-left:20px;margin-bottom:40px;float:none;display:block;font-size:120%;}
+	.wrap > header > nav > .depthContainer > .depth2 > h3 {color:black;margin:10px 0px 20px 0px;}
+	.wrap > header > nav > .depthContainer > .depth2::after{content:'';display:block;clear:both;}
+	.wrap > header > nav > .depthContainer > .depth2 > ul > li {width:265px;margin-bottom:20px;}
+	.wrap > header > nav > .depthContainer > .depth2 > ul > li > a:hover{text-decoration: underline;}
+	.wrap > header > nav > .depthContainer > .depth2.right {float:none;display:none;}
+	.wrap > header > nav > .depthContainer > .depth2.online {padding:0;position:unset;padding:0;top:0;}
+	
+	/* 비주얼 버튼 */
+	.mainvisual > .slide > .imgBox > .FSLbtn {position:absolute;top:50%;left:0; z-index:1;}
+	.mainvisual > .slide > .imgBox > .FSRbtn {position:absolute;top:50%;right:0; z-index:1;}
+
+	
+	/* content */
+}
+/* 모바일 작은화면 */
+@media screen and (max-width:769px) 
+{
+	/* header */
+	.wrap > header > nav {padding: 17px 3% 0px 3%;z-index:4;background-color:white;}
+	.wrap > header > nav > .btnMobile {position:absolute;top:40%;display:block;}
+	.wrap > header > nav > .menuRoot{border-top:1px solid lightgray;width:280px;height:500px;overflow:scroll;top:100%;background-color:white;}
+	.wrap > header > nav > .menuRoot > ul > li {float:none; padding:0;margin:0;margin-top:-17px;width:285px;}
+	.wrap > header > nav > .menuRoot > ul > li+li {padding:0;margin:0;}
+	.wrap > header > nav > .menuRoot > ul > li > a {padding:8% 60% 8% 11%;margin:0 auto;background-color:white;font-size:120%;display:block;}
+	.wrap > header > nav > .menuRoot > .storeMenu {position:absolute;left:0;margin-top:16px;z-index:5;}
+	.wrap > header > nav > .menuRoot > .userMenu {position:absolute;left:0;top:95%;margin-top:0px;z-index:5;}
+}
