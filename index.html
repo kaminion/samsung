@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <!-- 반응형 태그 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>SAMSUNG|대한민국|모바일|가전|IT</title>
 	<link rel="stylesheet" media="all" href="./css/common.css" />
-	<style></style>
-
+    <link rel="stylesheet" media="all"href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="wrap">
@@ -15,7 +14,7 @@
             <header> <!-- 헤더시작 -->
                 <nav> <!-- 네비게이션 시작 -->
                     <h1><a href="#">SAMSUNG</a></h1>
-                    <a class="btnMobile" href="#">&#8634</a>
+                    <a class="btnMobile" href="#"><i class="fas fa-bars"></i></a>
                     <div class="menuRoot">
                         <ul class="storeMenu">
                                 <li><a href="#" >모바일</a></li>
@@ -252,166 +251,6 @@
             </div>
         </div> <!-- 푸터 종료 -->
     </div>
-    <!-- <script src="./js/mouseevent.js"></script>
-    <script src="./js/dribble.js"></script> -->
-
-    <script>
-
-        //nav 마우스 오버/리브 이벤트 부분
-        (function()
-        {
-            var storeMenuEls = document.querySelectorAll(".storeMenu > li");
-            var depthContainer; 
-
-            for(var i=0;i<storeMenuEls.length;i++)
-            {
-                storeMenuEls[i].addEventListener("mouseenter", function(event)
-                {
-                    if(event.target.tagName === "LI")
-                    {
-                        event.target.classList.add("on");
-                        console.log(event.target);
-                    }
-                    
-                    
-                }
-                );
-
-                storeMenuEls[i].addEventListener("mouseleave", function(event){
-                   
-                        console.log(event.target);
-                        event.target.classList.remove("on");
-                }
-                );
-            }
-
-            // 메인비주얼 슬라이드 부분
-            (function()
-            {
-                var imgBox = document.querySelector(".imgBox");
-                var li = imgBox.querySelectorAll("li");
-                //li의 인덱스들을 저장함
-                var liIndex = [];
-                var index = 0;
-                var maxSize = 0;
-                var previous = 1;
-
-                for(var i=0;i<imgBox.childNodes.length;i++)
-                {
-                    if(imgBox.childNodes[i].tagName === "LI")
-                    {
-                        liIndex[maxSize] = i;
-                        maxSize++;
-                    }
-                    
-                    else
-                    {
-                        continue;
-                    }
-                }
-                
-                console.log(liIndex);
-
-                imgBox.addEventListener("click", function(event)
-                {
-                    // 이벤트 처리 (원형 큐로 구현)
-                    event.preventDefault();
-                    var btn = event.target;
-                    if(btn.tagName === "A")
-                    {
-                        
-                        if(btn.className === "FSLbtn") // 좌측으로 -1 스텝 
-                        {
-                            
-                            console.log("L");
-
-                            imgBox.childNodes[previous].className = "";
-                            index = (index-1) % maxSize;
-                            if(index < -0)
-                            {
-                                index = maxSize-1;
-                            }
-                            console.log("index" , index);
-
-                            // if(index <= -0) // -1에서 -1곱하면 +1 , 이 이후 L처리 시 +1에서 -1을 한 뒤(0) -1을 곱하면 -0 상태가 된다. -0 > (-0-1) > -1 * -1 = 1 그 후 반복..
-                            // {
-                            //     imgBox.childNodes[liIndex[-index]].className = "on";
-                            //     console.log("previous" , previous);
-                            //     previous = liIndex[-index];
-                                
-                            // }
-                            // else
-                            // {
-                            imgBox.childNodes[liIndex[index]].className = "on";
-                            console.log("previous" , previous);
-                            previous = liIndex[index];
-                            // }
-                            
-                        }
-                        else if(btn.className === "FSRbtn") // 우측으로 +1 스텝
-                        {
-                            // index <= -0 ? index *= -1: index *= 1;
-                            console.log("R");
-                            imgBox.childNodes[previous].className = "";
-                            index = (index+1) % maxSize;
-                            console.log("index" , index);
-                            imgBox.childNodes[liIndex[index]].className = "on";
-                            console.log("previous" , previous);
-                            previous = liIndex[index];
-                        }
-                        
-                        else{ // L, R버튼 아닐시에 바로 리턴 
-                            return 0;
-                        }
-                        
-
-                    }
-                    else // A태그 아닐 시 리턴
-                    {
-                        return 0;
-                    }
-
-                });
-
-
-            }());
-            
-            // 두번째 슬라이더
-            (function()
-            {
-                var sixSlide = document.querySelector(".sixSlide");
-                var picDiv = sixSlide.querySelectorAll("div");
-                var Nowindex = 0;
-                var indexArr = [];
-                
-                for(var i=0;i<sixSlide.childNodes.length;i++)
-                {
-                    if(sixSlide.childNodes[i].tagName === "DIV")
-                    {
-                        if(sixSlide.childNodes[i].childNodes[0].tagName === "A")
-                        {
-                            indexArr.push(i);
-                        }
-                        else
-                        {
-                            console.log("NOT A");
-                        }
-                    }
-                    else
-                    {
-                    }
-                    
-                }
-
-                sixSlide.addEventListener("click", function(){
-
-                });
-
-            })();
-
-        }());
-
-        // requestAnimationFrame()
-    </script>
+    <script src="./js/desktop.js"></script>
 </body>
 </html>
