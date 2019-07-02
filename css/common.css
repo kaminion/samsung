@@ -36,6 +36,7 @@ a{
 /* common */
 .wrap > header > nav > .menuRoot > ul > li > a:hover {color:#1428a0;background-color:#f7f7f7;}
 .wrap > .shadowBox {visibility:hidden;position:fixed;left:0;right:0;bottom:0;top:0;background-color:rgba(0,0,0,0.8);z-index:4;}
+.wrap > header > nav > .menuRoot.on {visibility: visible;}
 /* layout */
 .wrap {width:100%;}
 header {margin:0 auto;width:100%;height:64px;display:block;max-width:1440px;}
@@ -150,6 +151,7 @@ header {margin:0 auto;width:100%;height:64px;display:block;max-width:1440px;}
 
 /* 6Slide */
 .DoWhatYouCant {position:relative;max-width:1440px;width:100%;margin:0 auto;text-align:center;background-color:black;color:white;font-size:1rem;padding-bottom:30px;margin-bottom:60px;}
+.DoWhatYouCant > strong {font-size:160%;margin-top:2%;margin-bottom:2%;display:block;}
 .DoWhatYouCant > .sixSlide{width:96%;overflow:hidden; height:100%; max-height:365px;margin:0 auto;}
 .DoWhatYouCant > .sixSlide::after{content:'';clear:both;display:block;}
 .DoWhatYouCant > .sixSlide > div {float:left;width:50%;max-width:690px;}
@@ -158,6 +160,7 @@ header {margin:0 auto;width:100%;height:64px;display:block;max-width:1440px;}
 .DoWhatYouCant > .sixSlide > .first{margin-left:-27%;}
 .DoWhatYouCant > .sixSlide > .second{padding:0 2%;}
 .DoWhatYouCant > .sixSlide > .third{margin-right:-27%;}
+.DoWhatYouCant > span {font-size:120%;margin-top:2%; display:block;}
 .DoWhatYouCant > .sLbtn{left:30%;position:absolute;top:25%;}
 .DoWhatYouCant > .sRbtn{right:30%;position:absolute;top:25%;}
 .DoWhatYouCant > .sLbtn > a {color:white;}
@@ -172,7 +175,7 @@ header {margin:0 auto;width:100%;height:64px;display:block;max-width:1440px;}
 .searchBox{width:96%;margin:0 auto;margin-bottom:50px;}
 .searchBox > h2 {font-size:1.5rem;margin:0 auto;text-align:center;color:black;margin-bottom:20px;}
 .searchBox > form{text-align:center;}
-.searchBox > form > input {width:700px;height:30px;padding:0 20px;box-sizing:border-box;}
+.searchBox > form > input {width:100%;height:30px;padding:0 20px;box-sizing:border-box;}
 
 
 /* footer */
@@ -196,18 +199,34 @@ header {margin:0 auto;width:100%;height:64px;display:block;max-width:1440px;}
 
 
 /* 1025까지 nav탭 일자형 */
-@media screen and (min-width:0px) and (max-width:1025px)
+@media screen and (min-width:0px) and (max-width:654px)
 {
 	.wrap > header > nav > .btnMobile {position:absolute;top:40%;display:block;}
-	.wrap > header > nav > .menuRoot{position:absolute;visibility:hidden;border-top:1px solid lightgray;width:98%;height:817px;overflow:unset;top:100%;background-color:white;z-index:4;}
-	.wrap > header > nav > .menuRoot > ul > li {float:none; padding:0;margin:0;margin-top:-17px;width:285px;}
+	.wrap > header > nav > .menuRoot{height:70%;overflow:scroll;position:absolute;visibility:hidden;border-top:1px solid lightgray;width:98%;height:817px;top:100%;background-color:white;z-index:4;}
+	
+	.wrap > header > nav > .menuRoot > ul {width:100%;}
+	.wrap > header > nav > .menuRoot > ul > li {float:none; padding:0;margin:0;margin-top:0px;width:50%;}
 	.wrap > header > nav > .menuRoot > ul > li+li {padding:0;margin:0;}
-	.wrap > header > nav > .menuRoot > ul > li > a {padding:8% 60% 8% 11%;margin:0 auto;background-color:white;font-size:120%;display:block;}
-	.wrap > header > nav > .menuRoot > .storeMenu {position:absolute;left:0;margin-top:16px;z-index:5;}
-	.wrap > header > nav > .menuRoot > .userMenu {position:absolute;left:0;top:58%;margin-top:0px;z-index:5;}
+	.wrap > header > nav > .menuRoot > ul > li > a {padding:11% 89% 8% 11%;margin:0 auto;background-color:white;font-size:100%;display:block;width:100%}
+	.wrap > header > nav > .menuRoot > .storeMenu {position:absolute;left:0;margin-top:0;z-index:5;}
+	.wrap > header > nav > .menuRoot > .userMenu {position:absolute;left:0;top:65%;margin-top:0px;z-index:5;border-top:1px solid lightgray;}
 }
+
+@media screen and (min-width:655px) and (max-width:1025px)
+{
+	.wrap > header > nav > .btnMobile {position:absolute;top:40%;display:block;}
+	.wrap > header > nav > .menuRoot{height:70%;overflow:scroll;position:absolute;visibility:hidden;border-top:1px solid lightgray;width:98%;height:817px;top:100%;background-color:white;z-index:4;}
+	.wrap > header > nav > .menuRoot.on {visibility: visible;}
+	.wrap > header > nav > .menuRoot > ul {width:100%;}
+	.wrap > header > nav > .menuRoot > ul > li {float:none; padding:0;margin:0;margin-top:0px;width:50%;}
+	.wrap > header > nav > .menuRoot > ul > li+li {padding:0;margin:0;}
+	.wrap > header > nav > .menuRoot > ul > li > a {padding:11% 89% 8% 11%;margin:0 auto;background-color:white;font-size:100%;display:block;width:100%}
+	.wrap > header > nav > .menuRoot > .storeMenu {position:absolute;left:0;margin-top:0;z-index:5;}
+	.wrap > header > nav > .menuRoot > .userMenu {position:absolute;left:0;top:95%;margin-top:0px;z-index:5;border-top:1px solid lightgray;}
+}
+
 /* 더블탭*/
-@media screen and (min-width:1026px)
+@media screen and (min-width:1026px) and (max-width:1280px)
 {
 	.wrap > header > nav {padding: 17px 5% 0px 5%;z-index:4;background-color:white;}
 	.wrap > header > nav > .btnMobile {position:absolute;top:40%;display:block;}
@@ -242,17 +261,18 @@ header {margin:0 auto;width:100%;height:64px;display:block;max-width:1440px;}
 
 	
 	/* content */
+	/* product */
+	.product > .menuTab {width:100%; height:48px;}
+	.product > .menuTab > li {display:inline-block;height:50%;}
+
+	/* sixSlide */
+	.DoWhatYouCant > .sixSlide > .first{margin-left:4%;}
+	.DoWhatYouCant > .sixSlide > div{float:none; width:100%;}
+
 }
 /* 모바일 작은화면 */
 @media screen and (max-width:769px) 
 {
-	/* header */
-	/* .wrap > header > nav {padding: 17px 3% 0px 3%;z-index:4;background-color:white;}
-	.wrap > header > nav > .btnMobile {position:absolute;top:40%;display:block;}
-	.wrap > header > nav > .menuRoot{border-top:1px solid lightgray;width:280px;height:500px;overflow:scroll;top:100%;background-color:white;}
-	.wrap > header > nav > .menuRoot > ul > li {float:none; padding:0;margin:0;margin-top:-17px;width:285px;}
-	.wrap > header > nav > .menuRoot > ul > li+li {padding:0;margin:0;}
-	.wrap > header > nav > .menuRoot > ul > li > a {padding:8% 60% 8% 11%;margin:0 auto;background-color:white;font-size:120%;display:block;}
-	.wrap > header > nav > .menuRoot > .storeMenu {position:absolute;left:0;margin-top:16px;z-index:5;}
-	.wrap > header > nav > .menuRoot > .userMenu {position:absolute;left:0;top:95%;margin-top:0px;z-index:5;} */
+
+	
 }
