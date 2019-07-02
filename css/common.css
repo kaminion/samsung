@@ -253,10 +253,18 @@ header {margin:0 auto;width:100%;height:64px;display:block;max-width:1440px;z-in
 /* 모바일 작은화면 */
 @media screen and (min-width:0px) and (max-width:769px) 
 {
-	/* product */
+    /* galaxy */
+    .galaxy { margin-bottom:50px;}
+    .galaxy > ul{overflow:hidden; }
+    .galaxy > ul > li {width:100%;}
+
+
+    /* product */
+    
 	.product > .menuTab {width:100%; height:48px;}
 	.product > .menuTab > li {display:inline-block;height:50%;}
-	.product > .productList > .inner > .box4Grid > .box4inner > .grid > a{padding:10px 5px;}
+    .product > .productList > .inner > .box4Grid > .box4inner {width:100%;height:100%;}
+    .product > .productList > .inner > .box4Grid > .box4inner > .grid > a{padding:10px 5px;}
 	.product > .productList > .inner > .box4Grid > .box4inner > .grid > a > .productName{font-size:10%;width:100%;text-align:center;}
 	.product > .productList > .inner > .box4Grid > .box4inner > .grid > a > .btnBuy {font-size:1%;bottom:-10%;padding:6px;}
 	.product > .productList > .inner > .box4Grid > .box4inner > .grid > a:hover > .btnBuy {opacity:1;bottom:0%;}
@@ -280,7 +288,8 @@ header {margin:0 auto;width:100%;height:64px;display:block;max-width:1440px;z-in
 
 	
 	/* content */
-	/* product */
+    /* product */
+    .product > .productList > .inner > .box4Grid > .box4inner {width:100%;height:100%;}
 	.product > .menuTab {width:100%; height:48px;}
 	.product > .menuTab > li {display:inline-block;height:50%;}
 	
