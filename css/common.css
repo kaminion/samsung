@@ -37,6 +37,7 @@ a{
 /* common */
 .wrap > header > nav > .menuRoot > ul > li > a:hover {color:#1428a0;background-color:#f7f7f7;}
 .wrap > .shadowBox {visibility:hidden;position:fixed;left:0;right:0;bottom:0;top:0;background-color:rgba(0,0,0,0.8);z-index:4;}
+.wrap > .shadowBox.on {visibility:visible;}
 .wrap > header > nav > .menuRoot.on {visibility: visible;}
 /* layout */
 .wrap {width:100%;}

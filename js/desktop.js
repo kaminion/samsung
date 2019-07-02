@@ -88,17 +88,28 @@
 
 function init()
 {
-    
     var nav = document.querySelector("nav");
+    var wrap = document.querySelector(".wrap");
+    var shadowBoxEl = document.querySelector(".shadowBox");
+    var depthContainerEl = document.querySelector(".depthContainer");
+    var menuRootEl = document.querySelector(".menuRoot");
     var savePage = null;
-    window.addEventListener("resize", displayChangeWidth);
 
+    window.addEventListener("resize", displayChangeWidth);
+    
     // 초기화면 조정 
-    if(window.innerWidth > 1280)
+    if(window.innerWidth >= 1280)
     {
         nav.addEventListener("mouseover", mouseOver);
         nav.addEventListener("mouseout", mouseOut);
     }
+    else
+    {
+        window.addEventListener("click", shadowBoxClick)
+        nav.addEventListener("click", mouseClick);
+        menuRootEl.addEventListener("click", menuListOpen);
+    }
+
     //nav 마우스 오버/리브 이벤트 부분
     function mouseOver(event)
     {  
@@ -129,6 +140,53 @@ function init()
         savePage.classList.remove("on");
     }
 
+    // 모바일 메뉴버튼 클릭 콜백 함수
+    function mouseClick(event)
+    {
+        event.preventDefault();
+        
+        if(event.target.tagName === "A" && event.target.classList.contains("fa-bars"))
+        {
+            if(menuRootEl.classList.contains("on"))
+            {
+                menuRootEl.classList.remove("on");
+                shadowBoxEl.classList.remove("on");
+                depthContainerEl.classList.remove("on")
+            }
+            else
+            {
+                wrap.style.position = "fixed";
+                menuRootEl.classList.add("on");
+                shadowBoxEl.classList.add("on");
+            }
+            
+        }
+    }
+
+    function menuListOpen(event)
+    {
+        event.preventDefault();
+        console.log(event.target);
+        if(event.target.tagName === "A" && event.target.textContent === "모바일")
+        {
+            if(depthContainerEl.classList.contains("on")) depthContainerEl.classList.remove("on");
+            else depthContainerEl.classList.add("on");
+        }
+    }
+
+    // 화면 블랙박스
+    function shadowBoxClick(event)
+    {
+        if(event.target.classList.contains("shadowBox")) 
+        {
+            wrap.style.position = "unset";
+            menuRootEl.classList.remove("on");
+            shadowBoxEl.classList.remove("on");
+            depthContainerEl.classList.remove("on")
+        }
+    }
+
+    // 화면 조정시 호출되는 콜백함수
     function displayChangeWidth()
     {
         if(savePage !== null) savePage.classList.remove("on");
@@ -136,11 +194,27 @@ function init()
         {
             nav.addEventListener("mouseover", mouseOver);
             nav.addEventListener("mouseout", mouseOut);
+
+            nav.removeEventListener("click", mouseClick);
+            window.removeEventListener("click", shadowBoxClick);
+            menuRootEl.removeEventListener("click", menuListOpen);
+            wrap.style.position = "unset";
+            menuRootEl.classList.remove("on");
+            shadowBoxEl.classList.remove("on");
+            depthContainerEl.classList.remove("on")
         }
         else
         {
+            nav.addEventListener("click", mouseClick);
+            window.addEventListener("click", shadowBoxClick);
+            menuRootEl.addEventListener("click", menuListOpen);
+
             nav.removeEventListener("mouseover", mouseOver);
             nav.removeEventListener("mouseout", mouseOut);
+            wrap.style.position = "unset";
+            menuRootEl.classList.remove("on");
+            shadowBoxEl.classList.remove("on");
+            depthContainerEl.classList.remove("on")
         }
     }
 }
