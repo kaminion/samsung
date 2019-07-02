@@ -86,7 +86,7 @@
     });
 }());
 
-function init()
+function start()
 {
     var nav = document.querySelector("nav");
     var wrap = document.querySelector(".wrap");
@@ -149,9 +149,7 @@ function init()
         {
             if(menuRootEl.classList.contains("on"))
             {
-                menuRootEl.classList.remove("on");
-                shadowBoxEl.classList.remove("on");
-                depthContainerEl.classList.remove("on")
+                init();
             }
             else
             {
@@ -179,11 +177,17 @@ function init()
     {
         if(event.target.classList.contains("shadowBox")) 
         {
-            wrap.style.position = "unset";
-            menuRootEl.classList.remove("on");
-            shadowBoxEl.classList.remove("on");
-            depthContainerEl.classList.remove("on")
+            init();
         }
+    }
+
+    // 초기화 함수
+    function init()
+    {
+        wrap.style.position = "unset";
+        menuRootEl.classList.remove("on");
+        shadowBoxEl.classList.remove("on");
+        depthContainerEl.classList.remove("on")
     }
 
     // 화면 조정시 호출되는 콜백함수
@@ -198,10 +202,7 @@ function init()
             nav.removeEventListener("click", mouseClick);
             window.removeEventListener("click", shadowBoxClick);
             menuRootEl.removeEventListener("click", menuListOpen);
-            wrap.style.position = "unset";
-            menuRootEl.classList.remove("on");
-            shadowBoxEl.classList.remove("on");
-            depthContainerEl.classList.remove("on")
+            init();
         }
         else
         {
@@ -211,12 +212,9 @@ function init()
 
             nav.removeEventListener("mouseover", mouseOver);
             nav.removeEventListener("mouseout", mouseOut);
-            wrap.style.position = "unset";
-            menuRootEl.classList.remove("on");
-            shadowBoxEl.classList.remove("on");
-            depthContainerEl.classList.remove("on")
+            init();
         }
     }
 }
 
-init();
+start();
