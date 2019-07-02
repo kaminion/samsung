@@ -154,15 +154,15 @@ header {margin:0 auto;width:100%;height:64px;display:block;max-width:1440px;}
 .DoWhatYouCant > strong {font-size:160%;margin-top:2%;margin-bottom:2%;display:block;}
 .DoWhatYouCant > .sixSlide{width:96%;overflow:hidden; height:100%; max-height:365px;margin:0 auto;}
 .DoWhatYouCant > .sixSlide::after{content:'';clear:both;display:block;}
-.DoWhatYouCant > .sixSlide > div {float:left;width:50%;max-width:690px;}
+.DoWhatYouCant > .sixSlide > div {float:left;width:50%;max-width:690px;margin-bottom:50%;}
 .DoWhatYouCant > .sixSlide > div > a { width:100%; height:100%; max-width:690px;  max-height:386px;}
 .DoWhatYouCant > .sixSlide > div > a > img {width:100%;height:100%;}
 .DoWhatYouCant > .sixSlide > .first{margin-left:-27%;}
 .DoWhatYouCant > .sixSlide > .second{padding:0 2%;}
 .DoWhatYouCant > .sixSlide > .third{margin-right:-27%;}
 .DoWhatYouCant > span {font-size:120%;margin-top:2%; display:block;}
-.DoWhatYouCant > .sLbtn{left:30%;position:absolute;top:25%;}
-.DoWhatYouCant > .sRbtn{right:30%;position:absolute;top:25%;}
+.DoWhatYouCant > .sLbtn{left:26%;position:absolute;top:25%;}
+.DoWhatYouCant > .sRbtn{right:23%;position:absolute;top:25%;}
 .DoWhatYouCant > .sLbtn > a {color:white;}
 .DoWhatYouCant > .sRbtn > a {color:white;}
 .DoWhatYouCant > .dot {width:100%;height:100%; margin:0 auto;}
@@ -265,14 +265,17 @@ header {margin:0 auto;width:100%;height:64px;display:block;max-width:1440px;}
 	.product > .menuTab {width:100%; height:48px;}
 	.product > .menuTab > li {display:inline-block;height:50%;}
 
-	/* sixSlide */
-	.DoWhatYouCant > .sixSlide > .first{margin-left:4%;}
-	.DoWhatYouCant > .sixSlide > div{float:none; width:100%;}
+	
 
 }
 /* 모바일 작은화면 */
-@media screen and (max-width:769px) 
+@media screen and (min-width:0px) and (max-width:769px) 
 {
-
+	/* sixSlide */
+	.DoWhatYouCant {height:540px}
+	.DoWhatYouCant > .sixSlide{height:100%;}
+	.DoWhatYouCant > .sixSlide > .first{margin-left:4%;}
+	.DoWhatYouCant > .sixSlide > div{float:none; width:100%;height:100%;}
+	.DoWhatYouCant > .sixSlide > div > a > img {height:auto;}
 	
 }
