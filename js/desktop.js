@@ -107,19 +107,7 @@ function start()
     window.addEventListener("resize", displayChangeWidth);
     
     // 초기화면 조정 
-    if(window.innerWidth >= 1280)
-    {
-        nav.addEventListener("mouseover", mouseOver);
-        nav.addEventListener("mouseout", mouseOut);
-        imageChanger(0);
-    }
-    else
-    {
-        window.addEventListener("click", shadowBoxClick)
-        nav.addEventListener("click", mouseClick);
-        menuRootEl.addEventListener("click", menuListOpen);
-        imageChanger(1);
-    }
+    displayChangeWidth()
 
     //nav 마우스 오버/리브 이벤트 부분
     function mouseOver(event)
@@ -207,6 +195,19 @@ function start()
         var toggleChanger;
         if(savePage !== null) savePage.classList.remove("on");
         if((window.innerWidth|0) >= 1280)
+        {
+            toggleChanger = 0;
+            imageChanger(toggleChanger);
+            //오버 활성화 / 클릭 비활성화
+            nav.addEventListener("mouseover", mouseOver);
+            nav.addEventListener("mouseout", mouseOut);
+
+            nav.removeEventListener("click", mouseClick);
+            window.removeEventListener("click", shadowBoxClick);
+            menuRootEl.removeEventListener("click", menuListOpen);
+            init();
+        }
+        else if(window.innerWidth >= 655 && window.innerWidth < 1280)
         {
             toggleChanger = 0;
             imageChanger(toggleChanger);
