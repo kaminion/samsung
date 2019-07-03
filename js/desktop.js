@@ -88,7 +88,7 @@
 
 // 두번째 슬라이드
 (function(){
-    
+
 }());
 
 
@@ -101,6 +101,7 @@ function start()
     var shadowBoxEl = document.querySelector(".shadowBox");
     var depthContainerEl = document.querySelector(".depthContainer");
     var menuRootEl = document.querySelector(".menuRoot");
+    var imgBoxEl = document.querySelector(".imgBox");
     var savePage = null;
 
     window.addEventListener("resize", displayChangeWidth);
@@ -110,12 +111,14 @@ function start()
     {
         nav.addEventListener("mouseover", mouseOver);
         nav.addEventListener("mouseout", mouseOut);
+        imageChanger(0);
     }
     else
     {
         window.addEventListener("click", shadowBoxClick)
         nav.addEventListener("click", mouseClick);
         menuRootEl.addEventListener("click", menuListOpen);
+        imageChanger(1);
     }
 
     //nav 마우스 오버/리브 이벤트 부분
@@ -201,9 +204,13 @@ function start()
     // 화면 조정시 호출되는 콜백함수
     function displayChangeWidth()
     {
+        var toggleChanger;
         if(savePage !== null) savePage.classList.remove("on");
         if((window.innerWidth|0) >= 1280)
         {
+            toggleChanger = 0;
+            imageChanger(toggleChanger);
+            //오버 활성화 / 클릭 비활성화
             nav.addEventListener("mouseover", mouseOver);
             nav.addEventListener("mouseout", mouseOut);
 
@@ -214,6 +221,9 @@ function start()
         }
         else
         {
+            toggleChanger = 1;
+            imageChanger(toggleChanger);
+            //클릭 활성화 / 오버 비활성화
             nav.addEventListener("click", mouseClick);
             window.addEventListener("click", shadowBoxClick);
             menuRootEl.addEventListener("click", menuListOpen);
@@ -223,6 +233,47 @@ function start()
             init();
         }
     }
+    
+    //이미지 변환 함수
+    function imageChanger(toggle)
+    {
+        // 정규식으로 조건식 검사
+        var RegEx = new RegExp("PC");
+        // 이미지 변환을 위한 변수 선언 
+        var changer;
+        var imageEls = imgBoxEl.querySelectorAll("li > img");
+
+        if(toggle)
+        {
+            for(var i=0;i<imageEls.length;i++)
+            {
+                changer = imageEls[i].getAttribute("src").replace("_PC", "");
+                imageEls[i].setAttribute("src", changer);
+            }
+        }
+        else
+        {
+            for(var i=0;i<imageEls.length;i++)
+            {
+                changer = imageEls[i].getAttribute("src").replace("_PC", "");
+                imageEls[i].setAttribute("src", changer);
+
+                var pcChanger = imageEls[i].getAttribute("src").substring(0, imageEls[i].getAttribute("src").length-4);
+                
+                changer = imageEls[i].getAttribute("src").substring(imageEls[i].getAttribute("src").length-4, imageEls[i].getAttribute("src").length);
+                
+                if(changer !== ".jpg")
+                {
+                    pcChanger = imageEls[i].getAttribute("src").substring(0, imageEls[i].getAttribute("src").length-5);
+                    changer = imageEls[i].getAttribute("src").substring(imageEls[i].getAttribute("src").length-5, imageEls[i].getAttribute("src").length);
+                }
+                imageEls[i].setAttribute("src", pcChanger + "_PC" + changer);
+                console.log(pcChanger + changer);
+                
+            }
+        }
+    }
+
 }
 
 start();
