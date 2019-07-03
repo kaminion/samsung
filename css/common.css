@@ -156,13 +156,12 @@ header {margin:0 auto;width:100%;height:64px;display:block;max-width:1440px;z-in
 .DoWhatYouCant > strong {font-size:160%;margin-top:2%;margin-bottom:2%;display:block;}
 .DoWhatYouCant > .sixSlide{width:96%;overflow:hidden; height:100%; max-height:365px;margin:0 auto;}
 .DoWhatYouCant > .sixSlide::after{content:'';clear:both;display:block;}
-.DoWhatYouCant > .sixSlide > div {float:left;width:50%;max-width:690px;margin-bottom:50%;}
+.DoWhatYouCant > .sixSlide > div {float:left;width:33%;max-width:690px;margin-bottom:50%;margin-left:-17%;padding-right:17%;}
+.DoWhatYouCant > .sixSlide > div{}
 .DoWhatYouCant > .sixSlide > div > a { width:100%; height:100%; max-width:690px;  max-height:386px;}
 .DoWhatYouCant > .sixSlide > div > a > img {width:100%;height:100%;}
-.DoWhatYouCant > .sixSlide > .first{margin-left:-27%;}
-.DoWhatYouCant > .sixSlide > .second{padding:0 2%;}
-.DoWhatYouCant > .sixSlide > .third{margin-right:-27%;}
-.DoWhatYouCant > span {font-size:120%;margin-top:2%; display:block;}
+
+.DoWhatYouCant > span {font-size:120%;margin-top:1%; display:block;}
 .DoWhatYouCant > .sLbtn{left:26%;position:absolute;top:25%;}
 .DoWhatYouCant > .sRbtn{right:23%;position:absolute;top:25%;}
 .DoWhatYouCant > .sLbtn > a {color:white;}
@@ -209,7 +208,7 @@ header {margin:0 auto;width:100%;height:64px;display:block;max-width:1440px;z-in
 	.wrap > header > nav > .menuRoot > .userMenu {position:static;margin-right:0;float:unset;margin-top:0;}
 	.wrap > header > nav > .menuRoot > ul > li {width:100%;float:unset;width:100%;padding:0;margin-top:0px;}
 	.wrap > header > nav > .menuRoot > ul > li+li {margin-left:0;}
-	.wrap > header > nav > .menuRoot > ul > li > a {margin-left:-1%;padding:5% 100% 8% 0%;width:100%;display:block;}
+	.wrap > header > nav > .menuRoot > ul > li > a {margin-left:-1%;padding:10% 100% 8% 0%;width:100%;display:block;}
 
 	.wrap > header > nav > .btnMobile {position:absolute;top:40%;display:block;}
 	.wrap > header > nav > .menuRoot{height:70%;overflow:scroll;position:absolute;visibility:hidden;border-top:1px solid lightgray;width:98%;height:817px;top:100%;background-color:white;z-index:4;}
@@ -233,7 +232,7 @@ header {margin:0 auto;width:100%;height:64px;display:block;max-width:1440px;z-in
 	/* sixSlide */
 	.DoWhatYouCant {height:540px}
 	.DoWhatYouCant > .sixSlide{height:100%;}
-	.DoWhatYouCant > .sixSlide > .first{margin-left:4%;}
+	.DoWhatYouCant > .sixSlide > .on{margin-left:4%;}
 	.DoWhatYouCant > .sixSlide > div{float:none; width:100%;height:100%;}
 	.DoWhatYouCant > .sixSlide > div > a > img {height:auto;}
 	

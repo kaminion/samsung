@@ -88,6 +88,7 @@
 
 // 두번째 슬라이드
 (function(){
+    
 
 }());
 
@@ -152,7 +153,8 @@ function start()
             }
             else
             {
-                wrap.style.position = "fixed";
+                if(!(window.innerWidth < 655)) wrap.style.position = "fixed";
+                
                 menuRootEl.classList.add("on");
                 shadowBoxEl.classList.add("on");
             }
@@ -226,9 +228,10 @@ function start()
             imageChanger(toggleChanger);
             //클릭 활성화 / 오버 비활성화
             nav.addEventListener("click", mouseClick);
-            window.addEventListener("click", shadowBoxClick);
+            
             menuRootEl.addEventListener("click", menuListOpen);
 
+            window.removeEventListener("click", shadowBoxClick);
             nav.removeEventListener("mouseover", mouseOver);
             nav.removeEventListener("mouseout", mouseOut);
             init();
