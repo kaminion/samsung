@@ -110,7 +110,7 @@ header {margin:0 auto;width:100%;height:64px;display:block;max-width:1440px;z-in
 .galaxy > h3 {font-size:300%; color:black;text-align:center; padding-bottom:1%;}
 .galaxy > ul {margin:0 auto;width:100%;height:100%;max-width:1440px;max-height:268.98px;}
 .galaxy > ul::after{content:''; display:block; clear:both;}
-.galaxy > ul > li {float:left;width:33%; height:100%; position: relative;}
+.galaxy > ul > li {margin-bottom:100px;float:left;width:33%; height:100%; position:relative;}
 .galaxy > ul > li+li {margin-left:0.5%;}
 .galaxy > ul > li > a{display:block; overflow:hidden;height:100%;max-height:266.63px;}
 .galaxy > ul > li > a > img {transition:all 0.8s ease;width:100%;height:100%;}

@@ -86,6 +86,14 @@
     });
 }());
 
+// 두번째 슬라이드
+(function(){
+    
+}());
+
+
+
+
 function start()
 {
     var nav = document.querySelector("nav");
