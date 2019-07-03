@@ -153,7 +153,7 @@ function start()
             }
             else
             {
-                if(!(window.innerWidth < 655)) wrap.style.position = "fixed";
+                wrap.style.position = "fixed";
                 
                 menuRootEl.classList.add("on");
                 shadowBoxEl.classList.add("on");
