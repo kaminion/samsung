@@ -212,12 +212,12 @@ function start()
             toggleChanger = 0;
             imageChanger(toggleChanger);
             //오버 활성화 / 클릭 비활성화
-            nav.addEventListener("mouseover", mouseOver);
-            nav.addEventListener("mouseout", mouseOut);
+            nav.addEventListener("click", mouseClick);
+            window.addEventListener("click", shadowBoxClick);
+            menuRootEl.addEventListener("click", menuListOpen);
 
-            nav.removeEventListener("click", mouseClick);
-            window.removeEventListener("click", shadowBoxClick);
-            menuRootEl.removeEventListener("click", menuListOpen);
+            nav.removeEventListener("mouseover", mouseOver);
+            nav.removeEventListener("mouseout", mouseOut);
             init();
         }
         else
