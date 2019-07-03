@@ -152,18 +152,19 @@ header {margin:0 auto;width:100%;height:64px;display:block;max-width:1440px;z-in
 .product > .productList > .inner > .box4Grid > .box4inner > .grid > a:hover > .btnBuy {opacity:1;bottom:5%;}
 
 /* 6Slide */
-.DoWhatYouCant {position:relative;max-width:1440px;width:100%;margin:0 auto;text-align:center;background-color:black;color:white;font-size:1rem;padding-bottom:30px;margin-bottom:60px;}
+.DoWhatYouCant {overflow:hidden;position:relative;max-width:1440px;width:100%;margin:0 auto;text-align:center;background-color:black;color:white;font-size:1rem;padding-bottom:30px;margin-bottom:60px;}
 .DoWhatYouCant > strong {font-size:160%;margin-top:2%;margin-bottom:2%;display:block;}
-.DoWhatYouCant > .sixSlide{width:96%;overflow:hidden; height:100%; max-height:365px;margin:0 auto;}
+.DoWhatYouCant > .sixSlide{width:133%;overflow:hidden; height:100%; max-height:365px;margin:0 auto;}
 .DoWhatYouCant > .sixSlide::after{content:'';clear:both;display:block;}
-.DoWhatYouCant > .sixSlide > div {float:left;width:33%;max-width:690px;margin-bottom:50%;margin-left:-17%;padding-right:17%;}
-.DoWhatYouCant > .sixSlide > div{}
+.DoWhatYouCant > .sixSlide > div {float:left;width:33%;max-width:690px;margin-right:4%;}
+.DoWhatYouCant > .sixSlide > .on{margin-left:-13%;}
+.DoWhatYouCant > .sixSlide > .void{margin-top:50%;margin-right:0;position:absolute;}
 .DoWhatYouCant > .sixSlide > div > a { width:100%; height:100%; max-width:690px;  max-height:386px;}
 .DoWhatYouCant > .sixSlide > div > a > img {width:100%;height:100%;}
 
 .DoWhatYouCant > span {font-size:120%;margin-top:1%; display:block;}
-.DoWhatYouCant > .sLbtn{left:26%;position:absolute;top:25%;}
-.DoWhatYouCant > .sRbtn{right:23%;position:absolute;top:25%;}
+.DoWhatYouCant > .sLbtn{left:50%;position:absolute;top:25%;transform:translateX(-3500%);}
+.DoWhatYouCant > .sRbtn{left:57%;position:absolute;top:25%;transform:translateX(3500%);}
 .DoWhatYouCant > .sLbtn > a {color:white;}
 .DoWhatYouCant > .sRbtn > a {color:white;}
 .DoWhatYouCant > .dot {width:100%;height:100%; margin:0 auto;}
@@ -237,6 +238,7 @@ header {margin:0 auto;width:100%;height:64px;display:block;max-width:1440px;z-in
 	.DoWhatYouCant > .sixSlide > .on{margin-left:4%;}
 	.DoWhatYouCant > .sixSlide > div{float:none; width:100%;height:100%;}
 	.DoWhatYouCant > .sixSlide > div > a > img {height:auto;}
+	.DoWhatYouCant > .sixSlide > .on{margin-left:0;}
 	
 }
 

@@ -88,7 +88,29 @@
 
 // 두번째 슬라이드
 (function(){
-    
+    var sixSlideEls = document.querySelectorAll(".sixSlide > div");
+    var dotEl = document.querySelector(".dot");
+
+    dotEl.addEventListener("click", dotWork);
+
+    function dotWork(event)
+    {
+        
+        event.preventDefault();
+        
+        if(event.target.tagName === "A")
+        {
+            for(var i=0;i < dotEl.querySelectorAll("button").length ;i++)
+            {
+                dotEl.querySelectorAll("button")[i].className = "";
+            }
+            event.target.parentNode.classList.add("on");
+        }
+
+    }
+
+
+
 
 }());
 
